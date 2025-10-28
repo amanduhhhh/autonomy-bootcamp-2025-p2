@@ -1,0 +1,20 @@
+15:49:51: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver_worker.py | heartbeat_receiver_worker | 46] Logger initialized
+15:49:51: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver_worker.py | heartbeat_receiver_worker | 57] HeartbeatReceiver created
+15:49:51: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 68] Connected to drone
+15:49:53: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:49:54: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:49:55: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:49:56: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:49:57: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 2 heartbeats missed
+15:49:58: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 3 heartbeats missed
+15:49:59: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 4 heartbeats missed
+15:50:00: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 5 heartbeats missed
+15:50:00: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 76] 5 missed heartbeats - Disconnected from drone
+15:50:04: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 68] Connected to drone
+15:50:05: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:50:06: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:50:07: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:50:08: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:50:09: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:50:11: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 1 heartbeats missed
+15:50:12: [WARNING] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\heartbeat\heartbeat_receiver.py | run | 73] 2 heartbeats missed

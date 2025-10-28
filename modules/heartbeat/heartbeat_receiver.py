@@ -12,8 +12,8 @@ from ..common.modules.logger import logger
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
-MAX_MISSED = 5
-HEARTBEAT_TIMEOUT = 1.0
+MAX_MISSED = heartbeat_receiver_drone.DISCONNECT_THRESHOLD
+HEARTBEAT_TIMEOUT = heartbeat_receiver_drone.HEARTBEAT_PERIOD
 
 
 class HeartbeatReceiver:
@@ -28,16 +28,11 @@ class HeartbeatReceiver:
         cls,
         connection: mavutil.mavfile,
         local_logger: logger.Logger,
-    ) -> "tuple":
+    ) -> "tuple[True, HeartbeatReceiver] | tuple[False, None]":
         """
         Falliable create (instantiation) method to create a HeartbeatReceiver object.
         """
-        try:
-            heartbeat_receiver = cls(cls.__private_key, connection, local_logger)
-            return True, heartbeat_receiver
-        except Exception as error:
-            local_logger.error(f"Failed to create HeartbeatReceiver object: {error}")
-            return False, None
+        return True, cls(cls.__private_key, connection, local_logger)
 
     def __init__(
         self,
@@ -52,37 +47,31 @@ class HeartbeatReceiver:
         self.connected = False
         self.missed = 0
 
-    def run(self) -> "tuple":
+    def run(self) -> "tuple[bool, str]":
         """
         Attempt to recieve a heartbeat message.
         If disconnected for over a threshold number of periods,
         the connection is considered disconnected.
         """
-        try:
-            msg = self.connection.recv_match(
-                type="HEARTBEAT", blocking=False, timeout=HEARTBEAT_TIMEOUT
-            )
-            if msg:
-                if not self.connected:
-                    self.connected = True
-                    self.local_logger.info("Connected to drone")
-                self.last = msg.time_usec
-                self.missed = 0
-            else:
-                if self.connected:
-                    self.missed += 1
-                    self.local_logger.info(f"{self.missed} heartbeats missed")
-                    if self.missed >= MAX_MISSED:
-                        self.connected = False
-                        self.local_logger.info(
-                            f"{MAX_MISSED} missed heartbeats - Disconnected from drone"
-                        )
-            status = "Connected" if self.connected else "Disconnected"
-            return True, status
-
-        except Exception as error:
-            self.local_logger.error(f"Failed to receive heartbeat: {error}")
-            return False, f"Failed to receive heartbeat: {error}"
+        msg = self.connection.recv_match(
+            type="HEARTBEAT", blocking=True, timeout=HEARTBEAT_TIMEOUT
+        )
+        if msg and msg.get_type() == "HEARTBEAT":
+            if not self.connected:
+                self.connected = True
+                self.local_logger.info("Connected to drone")
+            self.missed = 0
+        else:
+            if self.connected:
+                self.missed += 1
+                self.local_logger.warning(f"{self.missed} heartbeats missed")
+                if self.missed >= MAX_MISSED:
+                    self.connected = False
+                    self.local_logger.warning(
+                        f"{MAX_MISSED} missed heartbeats - Disconnected from drone"
+                    )
+        status = "Connected" if self.connected else "Disconnected"
+        return True, status
 
 
 # =================================================================================================
