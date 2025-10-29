@@ -53,9 +53,7 @@ class HeartbeatReceiver:
         If disconnected for over a threshold number of periods,
         the connection is considered disconnected.
         """
-        msg = self.connection.recv_match(
-            type="HEARTBEAT", blocking=True, timeout=HEARTBEAT_TIMEOUT
-        )
+        msg = self.connection.recv_match(type="HEARTBEAT", blocking=True, timeout=HEARTBEAT_TIMEOUT)
         if msg and msg.get_type() == "HEARTBEAT":
             if not self.connected:
                 self.connected = True
