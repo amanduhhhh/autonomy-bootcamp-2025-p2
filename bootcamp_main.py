@@ -94,13 +94,13 @@ def main() -> int:
     # Create worker properties for each worker type (what inputs it takes, how many workers)
     # Heartbeat sender
     result, heartbeat_sender_props = worker_manager.WorkerProperties.create(
-        num_workers=HEARTBEAT_SENDER_WORKER_COUNT,
-        worker_function=heartbeat_sender_worker.heartbeat_sender_worker,
-        worker_kwargs={
-            "connection": connection,
-            "controller": controller,
-        },
-        local_logger=main_logger,
+        HEARTBEAT_SENDER_WORKER_COUNT,
+        heartbeat_sender_worker.heartbeat_sender_worker,
+        (connection,),
+        [],
+        [],
+        controller,
+        main_logger,
     )
     if not result:
         main_logger.error("Failed to create heartbeat sender properties")
@@ -108,13 +108,13 @@ def main() -> int:
 
     # Heartbeat receiver
     result, heartbeat_receiver_props = worker_manager.WorkerProperties.create(
-        num_workers=HEARTBEAT_RECEIVER_WORKER_COUNT,
-        worker_function=heartbeat_receiver_worker.heartbeat_receiver_worker,
-        worker_kwargs={
-            "connection": connection,
-            "controller": controller,
-        },
-        local_logger=main_logger,
+        HEARTBEAT_RECEIVER_WORKER_COUNT,
+        heartbeat_receiver_worker.heartbeat_receiver_worker,
+        (connection,),
+        [],
+        [heartbeat_queue],
+        controller,
+        main_logger,
     )
     if not result:
         main_logger.error("Failed to create heartbeat receiver properties")
@@ -123,13 +123,13 @@ def main() -> int:
     # Telemetry
 
     result, telemetry_props = worker_manager.WorkerProperties.create(
-        num_workers=TELEMETRY_WORKER_COUNT,
-        worker_function=telemetry_worker.telemetry_worker,
-        worker_kwargs={
-            "connection": connection,
-            "controller": controller,
-        },
-        local_logger=main_logger,
+        TELEMETRY_WORKER_COUNT,
+        telemetry_worker.telemetry_worker,
+        (connection,),
+        [],
+        [telemetry_queue],
+        controller,
+        main_logger,
     )
     if not result:
         main_logger.error("Failed to create telemetry properties")
@@ -137,32 +137,32 @@ def main() -> int:
 
     # Command
     result, command_props = worker_manager.WorkerProperties.create(
-        num_workers=COMMAND_WORKER_COUNT,
-        worker_function=command_worker.command_worker,
-        worker_kwargs={
-            "connection": connection,
-            "controller": controller,
-        },
-        local_logger=main_logger,
+        COMMAND_WORKER_COUNT,
+        command_worker.command_worker,
+        (connection, TARGET),
+        [telemetry_queue],
+        [command_queue],
+        controller,
+        main_logger,
     )
     if not result:
         main_logger.error("Failed to create command properties")
         return -1
 
     # Create the workers (processes) and obtain their managers
-    result, heartbeat_sender_managers = worker_manager.create_workers(heartbeat_sender_props)
+    result, heartbeat_sender_managers = worker_manager.WorkerManager.create(heartbeat_sender_props, main_logger)
     if not result:
         main_logger.error("Failed to create heartbeat sender managers")
         return -1
-    result, heartbeat_receiver_managers = worker_manager.create_workers(heartbeat_receiver_props)
+    result, heartbeat_receiver_managers = worker_manager.WorkerManager.create(heartbeat_receiver_props, main_logger)
     if not result:
         main_logger.error("Failed to create heartbeat receiver managers")
         return -1
-    result, telemetry_managers = worker_manager.create_workers(telemetry_props)
+    result, telemetry_managers = worker_manager.WorkerManager.create(telemetry_props, main_logger)
     if not result:
         main_logger.error("Failed to create telemetry managers")
         return -1
-    result, command_managers = worker_manager.create_workers(command_props)
+    result, command_managers = worker_manager.WorkerManager.create(command_props, main_logger)
     if not result:
         main_logger.error("Failed to create command managers")
         return -1
@@ -177,6 +177,20 @@ def main() -> int:
 
     # Main's work: read from all queues that output to main, and log any commands that we make
     # Continue running for 100 seconds or until the drone disconnects
+    start = time.time()
+    while time.time() - start < LOOP_DURATION:
+        try:
+            if not heartbeat_queue.queue.empty():
+                heartbeat_status = heartbeat_queue.queue.get_nowait()
+                main_logger.info(f"Heartbeat status: {heartbeat_status}")
+                if heartbeat_status == "Disconnected":
+                    main_logger.warning("Drone disconnected")
+                    break
+            if not command_queue.queue.empty():
+                command_data = command_queue.queue.get_nowait()
+                main_logger.info(f"Command data: {command_data}")
+        except queue.Empty:
+            pass
 
     # Stop the processes
     controller.request_exit()
