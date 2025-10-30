@@ -1,0 +1,12 @@
+13:23:15: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 40] Logger initialized
+13:23:16: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:17: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:18: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:19: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:20: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:21: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:22: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:23: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:24: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:25: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 71] Drone: Recieved heartbeat!
+13:23:26: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\mock_drones\heartbeat_sender_drone.py | main | 80] Passed!

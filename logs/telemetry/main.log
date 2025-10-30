@@ -1,6 +1,6 @@
-19:43:15: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\common\modules\logger\logger_main_setup.py | setup_main_logger | 62] main logger initialized
-19:43:17: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | main | 115] Connected!
-19:43:18: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:39: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\common\modules\logger\logger_main_setup.py | setup_main_logger | 62] main logger initialized
+13:23:41: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | main | 115] Connected!
+13:23:42: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 0,
             x: 0.0,
             y: 0.0,
@@ -15,7 +15,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:18: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:42: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 500,
             x: 0.5,
             y: 0.0,
@@ -30,7 +30,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:18: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:42: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 1000,
             x: 1.0,
             y: 0.0,
@@ -45,8 +45,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:19: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 1507,
+13:23:43: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 1502,
             x: 1.5,
             y: 0.0,
             z: 0.0,
@@ -60,7 +60,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:19: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:43: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 2000,
             x: 2.0,
             y: 0.0,
@@ -75,8 +75,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:20: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 2503,
+13:23:44: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 2514,
             x: 2.5,
             y: 0.0,
             z: 0.0,
@@ -90,7 +90,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:20: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:44: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 3000,
             x: 3.0,
             y: 0.0,
@@ -105,8 +105,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:21: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 3503,
+13:23:45: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 3500,
             x: 3.5,
             y: 0.0,
             z: 0.0,
@@ -120,7 +120,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:21: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:45: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 4000,
             x: 4.0,
             y: 0.0,
@@ -135,8 +135,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:22: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 4501,
+13:23:46: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 4500,
             x: 4.5,
             y: 0.0,
             z: 0.0,
@@ -150,7 +150,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:25: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 0,
             x: 0.0,
             y: 0.0,
@@ -165,8 +165,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:26: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 508,
+13:23:50: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 501,
             x: 0.3333333432674408,
             y: 0.0,
             z: 0.0,
@@ -180,7 +180,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:26: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:50: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 1000,
             x: 0.6666666865348816,
             y: 0.0,
@@ -195,8 +195,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:27: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 1502,
+13:23:51: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 1509,
             x: 1.0,
             y: 0.0,
             z: 0.0,
@@ -210,7 +210,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:27: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:51: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 2000,
             x: 1.6666666269302368,
             y: 0.0,
@@ -225,8 +225,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:28: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 2500,
+13:23:52: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 2511,
             x: 2.0,
             y: 0.0,
             z: 0.0,
@@ -240,7 +240,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:28: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:52: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 3000,
             x: 2.6666667461395264,
             y: 0.0,
@@ -255,8 +255,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:29: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 3500,
+13:23:53: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 3504,
             x: 3.0,
             y: 0.0,
             z: 0.0,
@@ -270,7 +270,7 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:29: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+13:23:53: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
             time_since_boot: 4000,
             x: 3.6666667461395264,
             y: 0.0,
@@ -285,8 +285,8 @@
             pitch_speed: 0.0,
             yaw_speed: 3.1415927410125732
         }
-19:43:30: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
-            time_since_boot: 4501,
+13:23:54: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_telemetry.py | read_queue | 74] Received telemetry data: {
+            time_since_boot: 4500,
             x: 4.0,
             y: 0.0,
             z: 0.0,
