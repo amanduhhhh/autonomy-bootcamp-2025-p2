@@ -150,11 +150,15 @@ def main() -> int:
         return -1
 
     # Create the workers (processes) and obtain their managers
-    result, heartbeat_sender_managers = worker_manager.WorkerManager.create(heartbeat_sender_props, main_logger)
+    result, heartbeat_sender_managers = worker_manager.WorkerManager.create(
+        heartbeat_sender_props, main_logger
+    )
     if not result:
         main_logger.error("Failed to create heartbeat sender managers")
         return -1
-    result, heartbeat_receiver_managers = worker_manager.WorkerManager.create(heartbeat_receiver_props, main_logger)
+    result, heartbeat_receiver_managers = worker_manager.WorkerManager.create(
+        heartbeat_receiver_props, main_logger
+    )
     if not result:
         main_logger.error("Failed to create heartbeat receiver managers")
         return -1
