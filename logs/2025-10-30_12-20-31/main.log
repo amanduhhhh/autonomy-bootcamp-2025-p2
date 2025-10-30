@@ -1,0 +1,38 @@
+12:20:31: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\modules\common\modules\logger\logger_main_setup.py | setup_main_logger | 62] main logger initialized
+12:20:32: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | main | 139] Connected!
+12:20:33: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed altitude 1.00 m
+12:20:33: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed altitude -1.00 m
+12:20:36: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 63.43 degrees
+12:20:37: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 90.00 degrees
+12:20:37: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 116.57 degrees
+12:20:38: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 45.00 degrees
+12:20:38: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 63.43 degrees
+12:20:39: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 90.00 degrees
+12:20:39: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 26.57 degrees
+12:20:40: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 45.00 degrees
+12:20:40: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 90.00 degrees
+12:20:41: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 45.00 degrees
+12:20:41: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 90.00 degrees
+12:20:42: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw 135.00 degrees
+12:20:42: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -26.57 degrees
+12:20:43: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -45.00 degrees
+12:20:43: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -90.00 degrees
+12:20:44: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -45.00 degrees
+12:20:44: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -90.00 degrees
+12:20:45: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -135.00 degrees
+12:20:45: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -63.43 degrees
+12:20:46: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -90.00 degrees
+12:20:46: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -116.57 degrees
+12:20:47: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -45.00 degrees
+12:20:47: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -63.43 degrees
+12:20:48: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] Changed yaw -90.00 degrees
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None
+12:20:49: [INFO] [C:\Users\xiama\WARG\autonomy-bootcamp-2025-p2\tests\integration\test_command.py | read_queue | 83] None

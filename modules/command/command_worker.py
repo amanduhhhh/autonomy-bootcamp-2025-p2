@@ -19,13 +19,19 @@ from ..common.modules.logger import logger
 def command_worker(
     connection: mavutil.mavfile,
     target: command.Position,
-    args,  # Place your own arguments here
-    # Add other necessary worker arguments here
+    telemetry_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    output_queue: queue_proxy_wrapper.QueueProxyWrapper,
+    controller: worker_controller.WorkerController,
 ) -> None:
     """
     Worker process.
 
-    args... describe what the arguments are
+    Args:
+        connection: MAVLink connection to drone
+        target: Target position for  command
+        telemetry_queue: Telemetry receival queue
+        output_queue: Command results queue
+        controller: Controller for worker
     """
     # =============================================================================================
     #                          ↑ BOOTCAMPERS MODIFY ABOVE THIS COMMENT ↑
@@ -48,8 +54,26 @@ def command_worker(
     #                          ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
     # =============================================================================================
     # Instantiate class object (command.Command)
+    result, cmd = command.Command.create(connection, target, local_logger)
+    if not result:
+        local_logger.error("Failed to create Command", True)
+        return
+    local_logger.info("Command created", True)
 
     # Main loop: do work.
+    while not controller.is_exit_requested():
+        controller.check_pause()
+        if telemetry_queue.queue.empty():
+            continue
+
+        telemetry_data = telemetry_queue.queue.get()
+        local_logger.info("Received telemetry", True)
+        if telemetry_data is None:
+            continue
+
+        result, cmd_action = cmd.run(telemetry_data)
+        if result:
+            output_queue.queue.put(cmd_action)
 
 
 # =================================================================================================
