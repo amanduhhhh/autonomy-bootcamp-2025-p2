@@ -12,8 +12,6 @@ from ..common.modules.logger import logger
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
-MAX_MISSED = heartbeat_receiver_drone.DISCONNECT_THRESHOLD
-HEARTBEAT_TIMEOUT = heartbeat_receiver_drone.HEARTBEAT_PERIOD
 
 
 class HeartbeatReceiver:
@@ -44,6 +42,8 @@ class HeartbeatReceiver:
 
         self.connection = connection
         self.local_logger = local_logger
+        self.max_missed = heartbeat_receiver_drone.DISCONNECT_THRESHOLD
+        self.heartbeat_timeout = heartbeat_receiver_drone.HEARTBEAT_PERIOD
         self.connected = False
         self.missed = 0
 
@@ -53,7 +53,9 @@ class HeartbeatReceiver:
         If disconnected for over a threshold number of periods,
         the connection is considered disconnected.
         """
-        msg = self.connection.recv_match(type="HEARTBEAT", blocking=True, timeout=HEARTBEAT_TIMEOUT)
+        msg = self.connection.recv_match(
+            type="HEARTBEAT", blocking=True, timeout=self.heartbeat_timeout
+        )
         if msg and msg.get_type() == "HEARTBEAT":
             if not self.connected:
                 self.connected = True
@@ -63,10 +65,10 @@ class HeartbeatReceiver:
             if self.connected:
                 self.missed += 1
                 self.local_logger.warning(f"{self.missed} heartbeats missed")
-                if self.missed >= MAX_MISSED:
+                if self.missed >= self.max_missed:
                     self.connected = False
                     self.local_logger.warning(
-                        f"{MAX_MISSED} missed heartbeats - Disconnected from drone"
+                        f"{self.max_missed} missed heartbeats - Disconnected from drone"
                     )
         status = "Connected" if self.connected else "Disconnected"
         return True, status

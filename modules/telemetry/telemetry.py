@@ -65,7 +65,6 @@ class TelemetryData:  # pylint: disable=too-many-instance-attributes
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
-READ_TIMEOUT = 1.0
 
 
 class Telemetry:
@@ -96,6 +95,7 @@ class Telemetry:
 
         self.connection = connection
         self.logger = local_logger
+        self.read_timeout = 1.0
 
     def run(
         self,
@@ -105,7 +105,7 @@ class Telemetry:
         combining them together to form a single TelemetryData object.
         """
         start = time.time()
-        end = start + READ_TIMEOUT
+        end = start + self.read_timeout
         position_msg = None
         attitude_msg = None
 

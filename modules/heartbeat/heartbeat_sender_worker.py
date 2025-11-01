@@ -16,7 +16,6 @@ from ..common.modules.logger import logger
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
-HEARTBEAT_PERIOD = 1.0
 
 
 def heartbeat_sender_worker(
@@ -60,9 +59,16 @@ def heartbeat_sender_worker(
     while not controller.is_exit_requested():
         controller.check_pause()
 
+        iteration_start = time.time()
         sender.run()
+        local_logger.info("Heartbeat sent", True)
 
-        time.sleep(HEARTBEAT_PERIOD)
+        elapsed = (
+            time.time() - iteration_start
+        )  # logger was taking too long and delaying heartbeats :(
+        sleep_time = 1.0 - elapsed
+        if sleep_time > 0:
+            time.sleep(sleep_time)
 
 
 # =================================================================================================

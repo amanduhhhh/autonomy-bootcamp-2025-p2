@@ -24,11 +24,6 @@ class Position:
 # =================================================================================================
 #                            ↓ BOOTCAMPERS MODIFY BELOW THIS COMMENT ↓
 # =================================================================================================
-HEIGHT_TOLERANCE_M = 0.5
-ANGLE_TOLERANCE = math.radians(5.0)
-YAW_SPEED_DEG = 5.0
-TARGET_SYSTEM = 1
-TARGET_COMPONENT = 0
 
 
 class Command:  # pylint: disable=too-many-instance-attributes
@@ -65,6 +60,12 @@ class Command:  # pylint: disable=too-many-instance-attributes
         self.target = target
         self.local_logger = local_logger
 
+        self.height_tolerance_m = 0.5
+        self.angle_tolerance = math.radians(5.0)
+        self.yaw_speed_deg = 5.0
+        self.target_system = 1
+        self.target_component = 0
+
         self.vx_sum = 0.0
         self.vy_sum = 0.0
         self.vz_sum = 0.0
@@ -90,10 +91,10 @@ class Command:  # pylint: disable=too-many-instance-attributes
         )
 
         dist_z = self.target.z - telemetry_data.z
-        if telemetry_data.z is not None and abs(dist_z) > HEIGHT_TOLERANCE_M:
+        if telemetry_data.z is not None and abs(dist_z) > self.height_tolerance_m:
             self.connection.mav.command_long_send(
-                TARGET_SYSTEM,
-                TARGET_COMPONENT,
+                self.target_system,
+                self.target_component,
                 mavutil.mavlink.MAV_CMD_CONDITION_CHANGE_ALT,
                 0,
                 1.0,
@@ -104,7 +105,7 @@ class Command:  # pylint: disable=too-many-instance-attributes
                 0,
                 self.target.z,
             )
-            self.local_logger.info(f"Changed altitude {dist_z:.2f} m", True)
+            # self.local_logger.info(f"Changed altitude {dist_z:.2f} m", True)
             return True, f"Changed altitude {dist_z:.2f} m"
 
         if telemetry_data.yaw is not None:
@@ -114,27 +115,26 @@ class Command:  # pylint: disable=too-many-instance-attributes
                 2 * math.pi
             ) - math.pi
 
-            if abs(yaw_diff) > ANGLE_TOLERANCE:
+            if abs(yaw_diff) > self.angle_tolerance:
                 yaw_diff_deg = math.degrees(yaw_diff)
                 if yaw_diff_deg >= 0:
-                    direction = 1
-                else:
                     direction = -1
+                else:
+                    direction = 1
                 self.connection.mav.command_long_send(
-                    TARGET_SYSTEM,
-                    TARGET_COMPONENT,
+                    self.target_system,
+                    self.target_component,
                     mavutil.mavlink.MAV_CMD_CONDITION_YAW,
                     0,
                     yaw_diff_deg,
-                    YAW_SPEED_DEG,
+                    self.yaw_speed_deg,
                     direction,
                     1,
                     0,
                     0,
                     0,
-                    0,
                 )
-                self.local_logger.info(f"Changed yaw {yaw_diff_deg:.2f} degrees", True)
+                # self.local_logger.info(f"Changed yaw {yaw_diff_deg:.2f} degrees", True)
                 return True, f"Changed yaw {yaw_diff_deg:.2f} degrees"
         return False, None
 
